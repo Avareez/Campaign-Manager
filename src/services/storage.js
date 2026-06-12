@@ -1,3 +1,5 @@
+import { INITIAL_BALANCE } from "./mockData";
+
 const CAMPAIGNS_KEY = 'campaigns';
 const BALANCE_KEY = 'emeraldBalance';
 
@@ -13,7 +15,7 @@ export const storageService = {
 
     getBalance() {
         const data = localStorage.getItem(BALANCE_KEY);
-        return data ? parseFloat(data) : 50000.00;
+        return data ? parseFloat(data) : INITIAL_BALANCE;
     },
 
     saveBalance(balance) {
