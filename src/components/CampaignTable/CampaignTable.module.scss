@@ -1,0 +1,164 @@
+@use '../../styles/variables' as *;
+
+.wrapper {
+    overflow-x: auto;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    background-color: $color-surface;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: $font-size-sm;
+
+    th {
+        background-color: $color-bg;
+        color: $color-text-muted;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: $spacing-sm $spacing-md;
+        text-align: left;
+        border-bottom: 2px solid $color-border;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: $spacing-sm $spacing-md;
+        border-bottom: 1px solid $color-border;
+        color: $color-text;
+        vertical-align: middle;
+    }
+
+    tbody tr {
+        transition: background-color 0.15s ease;
+
+        &:last-child td {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: $color-bg;
+        }
+    }
+}
+
+.keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+}
+
+.keyword {
+    background-color: #eff6ff;
+    color: $color-primary;
+    border: 1px solid #bfdbfe;
+    border-radius: $radius-sm;
+    padding: 2px $spacing-sm;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.status {
+    display: inline-block;
+    padding: 2px $spacing-sm;
+    border-radius: $radius-sm;
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    &.on {
+        background-color: #dcfce7;
+        color: $color-success;
+    }
+
+    &.off {
+        background-color: #f1f5f9;
+        color: $color-text-muted;
+    }
+}
+
+.actions {
+    display: flex;
+    gap: $spacing-sm;
+}
+
+.btnEdit,
+.btnDelete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: $radius-sm;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btnEdit {
+    color: $color-primary;
+
+    &:hover {
+        background-color: #eff6ff;
+    }
+}
+
+.btnDelete {
+    color: $color-danger;
+
+    &:hover {
+        background-color: #fef2f2;
+    }
+}
+
+.empty {
+    padding: $spacing-2xl;
+    text-align: center;
+    color: $color-text-muted;
+    background-color: $color-surface;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+}
+
+// RWD - mobile table
+@media (max-width: $bp-md) {
+    .table {
+        thead {
+            display: none;
+        }
+
+        tbody tr {
+            display: block;
+            border: 1px solid $color-border;
+            border-radius: $radius-md;
+            margin-bottom: $spacing-md;
+            padding: $spacing-sm;
+
+            &:hover {
+                background-color: $color-surface;
+            }
+        }
+
+        td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: $spacing-xs $spacing-sm;
+            border-bottom: 1px solid $color-border;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: $color-text-muted;
+                font-size: 0.75rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                flex-shrink: 0;
+                margin-right: $spacing-sm;
+            }
+        }
+    }
+}
