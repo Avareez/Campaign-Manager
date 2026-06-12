@@ -1,0 +1,79 @@
+@use '../../styles/variables' as *;
+
+.header {
+    background-color: $color-surface;
+    border-bottom: 1px solid $color-border;
+    box-shadow: $shadow-sm;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-md $spacing-lg;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+}
+
+.brandIcon {
+    font-size: $font-size-xl;
+}
+
+.brandName {
+    font-size: $font-size-lg;
+    font-weight: 700;
+    color: $color-text;
+}
+
+.balance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-sm;
+}
+
+.balanceIcon {
+    color: $color-emerald;
+}
+
+.balanceInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.balanceLabel {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.balanceAmount {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $color-emerald;
+}
+
+@media (max-width: $bp-sm) {
+    .inner {
+        padding: $spacing-sm $spacing-md;
+    }
+
+    .brandName {
+        font-size: $font-size-base;
+    }
+
+    .balanceAmount {
+        font-size: $font-size-lg;
+    }
+}
