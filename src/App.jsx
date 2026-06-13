@@ -1,18 +1,26 @@
 import { useState } from 'react';
 import Header from './components/Layout/Header';
 import CampaignListPage from './pages/CampaignListPage';
+import Modal from './components/Modal/Modal';
+import CampaignForm from './components/CampaignForm/CampaignForm';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingCampaign, setEditingCampaign] = useState(null);
-
-  const handleEdit = (campaign) => {
-    setEditingCampaign(campaign);
-    console.log('Edit:', campaign);
-  };
 
   const handleAdd = () => {
     setEditingCampaign(null);
-    console.log('Add new campaign');
+    setIsModalOpen(true);
+  };
+
+  const handleEdit = (campaign) => {
+    setEditingCampaign(campaign);
+    setIsModalOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+    setEditingCampaign(null);
   };
 
   return (
@@ -22,6 +30,16 @@ function App() {
         onEdit={handleEdit}
         onAdd={handleAdd}
       />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleClose}
+        title={editingCampaign ? 'Edit Campaign' : 'New Campaign'}
+      >
+        <CampaignForm
+          campaign={editingCampaign}
+          onClose={handleClose}
+        />
+      </Modal>
     </div>
   );
 }
