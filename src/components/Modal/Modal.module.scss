@@ -1,0 +1,86 @@
+@use '../../styles/variables' as *;
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: $spacing-md;
+    backdrop-filter: blur(2px);
+}
+
+.modal {
+    background-color: $color-surface;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+    width: 100%;
+    max-width: 560px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.2s ease;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-lg;
+    border-bottom: 1px solid $color-border;
+    flex-shrink: 0;
+}
+
+.title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $color-text;
+}
+
+.btnClose {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: $radius-sm;
+    color: $color-text-muted;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+        background-color: $color-bg;
+        color: $color-text;
+    }
+}
+
+.body {
+    padding: $spacing-lg;
+    overflow-y: auto;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: $bp-sm) {
+    .overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .modal {
+        max-width: 100%;
+        max-height: 95vh;
+        border-radius: $radius-lg $radius-lg 0 0;
+    }
+}
