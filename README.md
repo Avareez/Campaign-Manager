@@ -8,7 +8,7 @@ A React application for managing advertising campaigns with full CRUD functional
 
 ## Live Demo
 
-[campaign-manager.vercel.app]https://campaign-manager-xi.vercel.app/
+[campaign-manager.vercel.app](https://campaign-manager-xi.vercel.app/)
 
 ## Features
 
