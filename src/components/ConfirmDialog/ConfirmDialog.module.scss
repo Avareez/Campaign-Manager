@@ -1,0 +1,80 @@
+@use '../../styles/variables' as *;
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-md;
+}
+
+.iconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #fef2f2;
+}
+
+.icon {
+    color: $color-danger;
+}
+
+.message {
+    font-size: $font-size-lg;
+    color: $color-text;
+    line-height: 1.5;
+
+    strong {
+        color: $color-danger;
+    }
+}
+
+.hint {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    line-height: 1.5;
+}
+
+.actions {
+    display: flex;
+    gap: $spacing-md;
+    width: 100%;
+    justify-content: center;
+    padding-top: $spacing-sm;
+}
+
+.btnCancel {
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $radius-md;
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $color-text-muted;
+    border: 1px solid $color-border;
+    background-color: $color-surface;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+        background-color: $color-bg;
+        color: $color-text;
+    }
+}
+
+.btnConfirm {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $radius-md;
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: white;
+    background-color: $color-danger;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+        background-color: $color-danger-hover;
+    }
+}

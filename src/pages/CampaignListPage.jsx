@@ -4,7 +4,7 @@ import CampaignTable from '../components/CampaignTable/CampaignTable';
 import styles from './CampaignListPage.module.scss';
 import { Plus } from 'lucide-react';
 
-function CampaignListPage({ onEdit, onAdd }) {
+function CampaignListPage({ onEdit, onAdd, onDelete }) {
     const { campaigns } = useApp();
 
     return (
@@ -23,7 +23,7 @@ function CampaignListPage({ onEdit, onAdd }) {
                 <CampaignTable
                     campaigns={campaigns}
                     onEdit={onEdit}
-                    onDelete={() => { }}
+                    onDelete={onDelete}
                 />
             </div>
         </main>
