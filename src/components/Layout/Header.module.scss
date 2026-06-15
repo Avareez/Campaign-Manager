@@ -70,10 +70,18 @@
     }
 
     .brandName {
-        font-size: $font-size-base;
+        display: none;
+    }
+
+    .balanceLabel {
+        display: none;
     }
 
     .balanceAmount {
         font-size: $font-size-lg;
+    }
+
+    .balanceInfo {
+        align-items: center;
     }
 }
