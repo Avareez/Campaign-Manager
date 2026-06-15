@@ -6,6 +6,10 @@ A React application for managing advertising campaigns with full CRUD functional
 
 ![Dashboard Preview](./screenshots/preview.png)
 
+## Live Demo
+
+[campaign-manager.vercel.app]https://campaign-manager-xi.vercel.app/
+
 ## Features
 
 - **Create** new advertising campaigns with full validation
