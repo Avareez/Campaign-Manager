@@ -1,5 +1,5 @@
 import { useApp } from '../../context/AppContext';
-import { Zap, Wallet } from 'lucide-react';
+import { ChartNoAxesCombined, Wallet } from 'lucide-react';
 import styles from './Header.module.scss';
 
 function Header() {
@@ -9,11 +9,11 @@ function Header() {
         <header className={styles.header}>
             <div className={styles.inner}>
                 <div className={styles.brand}>
-                    <Zap className={styles.brandIcon} size={20} />
+                    <ChartNoAxesCombined className={styles.brandIcon} size={30} />
                     <span className={styles.brandName}>Campaign Manager</span>
                 </div>
                 <div className={styles.balance}>
-                    <Wallet className={styles.balanceIcon} size={18} />
+                    <Wallet className={styles.balanceIcon} size={30} />
                     <div className={styles.balanceInfo}>
                         <span className={styles.balanceLabel}>Emerald Balance</span>
                         <span className={styles.balanceAmount}>
