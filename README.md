@@ -4,7 +4,7 @@ A React application for managing advertising campaigns with full CRUD functional
 
 ## Preview
 
-![Dashboard Preview](./screenshots/preview.png)
+![Dashboard Preview](./screenshots/preview_v2.png)
 
 ## Live Demo
 
